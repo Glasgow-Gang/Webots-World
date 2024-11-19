@@ -7,7 +7,7 @@ class Nao(Robot):
     def __init__(self):
         super().__init__()
         self.timeStep = int(self.getBasicTimeStep())
-        self.forwards = Motion('D:\Robotics&AI\GlasgowGangRobot\Webots-World\controllers\SupervisorPositionController\motions\Forwards50.motion')
+        self.forwards = Motion('D:\Robotics&AI\GlasgowGangRobot\GlasgowGangSoccerArena\controllers\SupervisorPositionController\motions\Forwards50.motion')
         self.currentlyPlaying = None
 
     def startMotion(self, motion):

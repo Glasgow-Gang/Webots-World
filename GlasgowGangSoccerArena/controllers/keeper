@@ -1,0 +1,54 @@
+from controller import Robot, Camera
+
+# 初始化机器人
+robot = Robot()
+timestep = int(robot.getBasicTimeStep())
+
+# 初始化摄像头
+camera = robot.getDevice('CameraTop')
+camera.enable(timestep)
+
+# 获取腿部关节
+left_hip = robot.getDevice("LHipYawPitch")
+right_hip = robot.getDevice("RHipYawPitch")
+
+# 设置关节速度
+speed = 0.1
+for joint in [left_hip, right_hip]:
+    joint.setVelocity(speed)
+
+# 定义函数：提取足球位置
+def detect_ball(image):
+    """
+    使用灰度特征检测足球的位置。
+    """
+    width, height = camera.getWidth(), camera.getHeight()
+    for x in range(width):
+        for y in range(height):
+            pixel = camera.imageGetGray(image, width, x, y)  # 提取灰度值
+            if pixel > 200:  # 检测高亮区域（白色）
+                return x - width // 2  # 返回相对中心的偏移量
+    return None
+
+# 主循环
+while robot.step(timestep) != -1:
+    # 获取当前摄像头图像
+    image = camera.getImage()
+    ball_offset = detect_ball(image)
+
+    if ball_offset is not None:
+        # 如果检测到足球，根据偏移调整守门员位置
+        if ball_offset > 10:  # 球偏右，向右移动
+            left_hip.setPosition(-0.1)  # 右移
+            right_hip.setPosition(-0.1)
+        elif ball_offset < -10:  # 球偏左，向左移动
+            left_hip.setPosition(0.1)  # 左移
+            right_hip.setPosition(0.1)
+        else:
+            # 足球在正前方，保持静止
+            left_hip.setPosition(0)
+            right_hip.setPosition(0)
+    else:
+        # 没有检测到足球，保持中立
+        left_hip.setPosition(0)
+        right_hip.setPosition(0)

@@ -17,7 +17,7 @@ Viewpoint {
   position -6.307265957417457e-06 -6.307283799182425e-06 13.053444091074454
 }
 DEF BALL RobocupSoccerBall {
-  translation -0.52815 -0.6 0.0699899
+  translation -0.55815 -0.6 0.0699899
   rotation 0 -0.9999999999999999 0 0
   name "RobocupSoccerBall"
 }

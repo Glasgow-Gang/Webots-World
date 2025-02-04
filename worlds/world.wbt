@@ -8,28 +8,148 @@ EXTERNPROTO "../protos/NaoV6.proto"
 EXTERNPROTO "../protos/NaoJersey.proto"
 
 WorldInfo {
-  basicTimeStep 1
+  basicTimeStep 20
   optimalThreadCount 8
   gpsCoordinateSystem "WGS84"
 }
 Viewpoint {
-  orientation -0.2665984666329413 0.25264233776327377 0.9301059653386126 1.6966986824505812
-  position -0.6556439041266443 -2.4560231343263483 1.8352727710018653
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position -6.307265957417457e-06 -6.307283799182425e-06 13.053444091074454
 }
 DEF BALL RobocupSoccerBall {
-  translation 0 0 0
-  rotation 0.7061171684562897 0.08214359694419121 0.7033142781803466 -3.0337383834214533
+  translation -0.52815 -0.6 0.0699899
+  rotation 0 -0.9999999999999999 0 0
   name "RobocupSoccerBall"
 }
 DEF PLAYER_1_0 NaoV6 {
-  translation -0.8268536441873447 -0.000945439698689188 0.33216204978548153
-  rotation 0.4577759294081671 -0.8890624776355354 -0.0030181641856736855 0.006061194156170272
-  name "nao(1)"
+  translation -1.5 1.4965 0.333811
+  rotation -0.055181198332494845 -0.22069799333078924 0.9737799705736161 0.00712413
+  name "NAO_1_0"
   controller "<extern>"
   controllerArgs [
     "1"
     "0"
   ]
+  supervisor TRUE
+  synchronization FALSE
+  jersey NaoJersey {
+    jerseyTexture [
+      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/textures/nao_2_red.png"
+    ]
+  }
+}
+DEF PLAYER_2_0 NaoV6 {
+  translation 0.0191442 -2.70374 0.334481
+  rotation -0.055181198332494845 -0.22069799333078924 0.9737799705736161 0.00712413
+  name "NAO_2_0"
+  controller "<extern>"
+  controllerArgs [
+    "1"
+    "0"
+  ]
+  supervisor TRUE
+  synchronization FALSE
+  jersey NaoJersey {
+    jerseyTexture [
+      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/textures/nao_2_red.png"
+    ]
+  }
+}
+DEF PLAYER_3_0 NaoV6 {
+  translation -1.46955 -1.4548 0.333637
+  rotation -0.055181198332494845 -0.22069799333078924 0.9737799705736161 0.00712413
+  name "NAO_3_0"
+  controller "<extern>"
+  controllerArgs [
+    "1"
+    "0"
+  ]
+  supervisor TRUE
+  synchronization FALSE
+  jersey NaoJersey {
+    jerseyTexture [
+      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/textures/nao_2_red.png"
+    ]
+  }
+}
+DEF PLAYER_4_0 NaoV6 {
+  translation -4.06948 -0.0535738 0.334481
+  rotation -0.055181198332494845 -0.22069799333078924 0.9737799705736161 0.00712413
+  name "NAO_4_0"
+  controller "<extern>"
+  controllerArgs [
+    "1"
+    "0"
+  ]
+  supervisor TRUE
+  synchronization FALSE
+  jersey NaoJersey {
+    jerseyTexture [
+      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/textures/nao_2_red.png"
+    ]
+  }
+}
+DEF PLAYER_1_1 NaoV6 {
+  translation 1.31032 -1.427 0.335105
+  rotation -0.0007861437418861663 0.0001965599354636617 0.9999996716710505 -3.134655307179586
+  name "NAO_1_1"
+  controller "<extern>"
+  controllerArgs [
+    "1"
+    "0"
+  ]
+  supervisor TRUE
+  synchronization FALSE
+  jersey NaoJersey {
+    jerseyTexture [
+      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/textures/nao_2_red.png"
+    ]
+  }
+}
+DEF PLAYER_2_1 NaoV6 {
+  translation 1.36037 1.42275 0.335055
+  rotation -0.0007861437418861663 0.0001965599354636617 0.9999996716710505 -3.134655307179586
+  name "NAO_2_1"
+  controller "<extern>"
+  controllerArgs [
+    "1"
+    "0"
+  ]
+  supervisor TRUE
+  synchronization FALSE
+  jersey NaoJersey {
+    jerseyTexture [
+      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/textures/nao_2_red.png"
+    ]
+  }
+}
+DEF PLAYER_3_1 NaoV6 {
+  translation 0.0813106 2.74315 0.334481
+  rotation -0.0007861437418861663 0.0001965599354636617 0.9999996716710505 -3.134655307179586
+  name "NAO_3_1"
+  controller "<extern>"
+  controllerArgs [
+    "1"
+    "0"
+  ]
+  supervisor TRUE
+  synchronization FALSE
+  jersey NaoJersey {
+    jerseyTexture [
+      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/textures/nao_2_red.png"
+    ]
+  }
+}
+DEF PLAYER_4_1 NaoV6 {
+  translation 3.97045 -0.000414041 0.334481
+  rotation -0.0007861437418861663 0.0001965599354636617 0.9999996716710505 -3.134655307179586
+  name "NAO_4_1"
+  controller "<extern>"
+  controllerArgs [
+    "1"
+    "0"
+  ]
+  supervisor TRUE
   synchronization FALSE
   jersey NaoJersey {
     jerseyTexture [

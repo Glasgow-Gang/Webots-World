@@ -662,7 +662,7 @@ PROTO NaoV6 [
       }
       DEF INERTIAL_UNIT InertialUnit {
         translation -0.008 0.006 0.029
-        rotation 1 0 0 1.5708
+        rotation 1 0 0 0
         yAxis FALSE
       }
       DEF US1 Pose {
@@ -749,9 +749,13 @@ PROTO NaoV6 [
         jointParameters HingeJointParameters {
           axis 0 0 1
           anchor 0 0 0.1265
+          dampingConstant 0.01        # 设置阻尼常数
+          staticFriction 0.001         # 设置静摩擦力
         }
         jointParameters2 JointParameters {
           axis 0 1 0
+          dampingConstant 0.01        # 设置阻尼常数
+          staticFriction 0.001         # 设置静摩擦力
         }
         endPoint Solid {
           translation 0 0 0.1265
